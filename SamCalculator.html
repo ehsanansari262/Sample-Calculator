@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main
+        {
+            height: 400px;
+            width: 400px;
+            /* border: 7px solid red; */
+            border-radius: 5px;
+            margin: auto;
+            margin-top: 100px;
+            background-color: transparent;
+            box-shadow: 10px 10px 50px 10px grey;
+            border-radius: 25px;
+        }
+        button
+        {
+            color: azure;
+            background-color: brown;
+            width: 100px;
+        }
+        #result
+        {
+            width: 200px;
+        }
+        button
+        {
+            border-radius: 40px;
+            width: 400;
+            color: white;
+            width: 400px;
+            height: 40px;
+            font-size: 25px;
+            box-shadow:3px 3px 15px 1px green;
+    animation-name: Animate;
+    animation-direction: normal;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in;
+        }
+        label
+        {
+            background-color: black;
+            color: white;
+        }
+        /* h1
+        {
+            text-shadow: 5px 1px green;
+        } */
+         #num1{
+            width: 390px;
+            height: 30px;
+         }
+         #num2{
+            width: 390px;
+            height: 30px;
+         }
+         #result{
+            width: 390px;
+            height: 40px;
+            border-radius: 10px;
+         }
+         .res_text{
+            color: red;
+         }
+         @keyframes Animate{
+            0%{
+                border: 5px solid orange;
+            }
+            50%{
+                border: 5px solid white;
+            }
+            
+           100%{
+                border: 5px solid green;
+            }
+         }
+         
+         
+    </style>
+</head>
+<body style="background-color: black;">
+    
+        <div class="main">
+            <center>
+                <h1 style="color: blue ;">Calculator</h1>
+            </center>
+            
+            <label for="num1">Enter the First Number:</label>
+            <br>
+            <br>
+            <input type="number" id="num1" required="">
+            <br>
+            <br>
+            <label for="num2">Enter the Second number:</label>
+            <input type="number" id="num2" required="">
+            <br>
+            <br>
+            <label for="operator">Select the operator:</label>
+            <Select id="operator">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+                <option value="%">%</option>
+           </Select>
+           <br>
+           <br>
+           
+            <!-- <label for="result" class="res_text">Result:</label> -->
+        
+            <br>
+            <br>
+            <input type="text" readonly="" id="result" placeholder="0">
+            <br>
+            <br>
+            <button onclick="cal()" >Calculate</button>
+        </div>
+</body>
+<script>
+    function cal()
+    {
+        var num1=document.getElementById('num1').value;
+        var num2=document.getElementById('num2').value;
+        var opr=document.getElementById('operator').value;
+        if(opr=='+'){
+        var res=parseInt(num1)+parseInt(num2);
+        }
+        if(opr=='-'){
+        var res=parseInt(num1)-parseInt(num2);
+        }
+        if(opr=='*'){
+        var res=parseInt(num1)*parseInt(num2);
+        }
+        if(opr=='/'){
+        var res=num1/num2;
+        }
+        if(opr=='%')
+        {
+            var res=num1%num2;
+        }
+        document.getElementById('result').value=res;
+    }
+</script>
+</html>
